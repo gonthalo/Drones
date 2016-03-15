@@ -6,7 +6,7 @@ Un software que permite utilizar drones autónomos para recoger basura en espaci
 
 Usamos un algoritmo de detección de esquinas para identificar puntos en los que puede haber objetos:
 
-[![Imagen](http://gonthalo.github.io/Drones/prado.jpg)](http://gonthalo.github.io/Drawing-Machine "Working")
-[![Imagen](http://gonthalo.github.io/Drones/resultado.png)](http://gonthalo.github.io/Drawing-Machine "Working")
+[![Imagen](https://github.com/gonthalo/Drones/blob/master/prado.jpg)](http://gonthalo.github.io/Drones "Original")
+[![Imagen](https://github.com/gonthalo/Drones/blob/master/resultado.png)](http://gonthalo.github.io/Drones "Puntos identificados")
 
-[habrá continuación]
+(habrá continuación)
