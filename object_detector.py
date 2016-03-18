@@ -7,6 +7,7 @@ import numpy as np
 from random import random
 import cv2
 import sklearn
+from sklearn import metrics, cluster
 from matplotlib import pyplot as plt
 
 matriz = []
@@ -56,14 +57,24 @@ def get_points(archivo): #identifica posibles puntos de interes en una imagen y 
 	    x,y = i.ravel()
 	    cv2.circle(imag,(x,y),7,(245, 10, 10),1)
 	plt.imshow(imag),plt.show()
+	cv2.imwrite("resultado.png", imag)
 	return total
+
+def get_clusters(points):
+	distance_matrix = metrics.pairwise.euclidean_distances(map(lambda x: x[0], points))
+	afin = cluster.AffinityPropagation(preference = -50).fit(distance_matrix)
+	centros = afin.cluster_centers_indices_
+	print len(centros)
+	return centros
 
 imagen1 = generate(4)
 imagen1.save("imagen_dron.png")
 
 
-print get_points("imagen_dron.png")
+puntitos = get_points("imagen_dron.png")
 
-#print get_points("prado.jpg")
+print puntitos
+print get_clusters(puntitos)
 
-#print get_points("monte.jpg")
+print get_points("prado.jpg")
+
